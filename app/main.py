@@ -5,7 +5,7 @@ from .api.routes import router as api_router
 from .api.chat_routes import router as chat_router
 
 app = FastAPI(title="Neural Miner API")
-
+#acessing something
 # Add CORS middleware to allow requests from the visualizer (even if opened locally)
 app.add_middleware(
     CORSMiddleware,
