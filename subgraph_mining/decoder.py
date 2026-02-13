@@ -37,7 +37,7 @@ import uuid
 
 # Add root to sys.path for robust imports in various environments (Docker, etc)
 if os.getcwd() not in sys.path:
-    sys.path.append(os.getcwd())
+    sys.path.append(os.getcwd()) 
 
 try:
     from visualizer.visualizer import visualize_pattern_graph_ext, visualize_all_pattern_instances

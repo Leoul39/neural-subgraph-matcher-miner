@@ -73,8 +73,7 @@ def parse_decoder(parser):
         # The parameters are updated accordingly
         # Dataset & Memory 
         graph_type="undirected",       
-        chunk_size=5000,               
-        memory_efficient=True,         
+        chunk_size=5000,                        
         auto_streaming_threshold=20000,
         streaming_workers=8,
         # Sampling Strategy
