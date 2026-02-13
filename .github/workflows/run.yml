@@ -46,15 +46,18 @@ jobs:
               set -e
               echo 'Starting decoder run...'
               python -m subgraph_mining.decoder \
-                --dataset=youtube_ungraph_pro.pkl \
-                --n_trials=200 \
-                --node_anchored \
+                --dataset=facebook_friends.pkl \
+                --n_trials=500 \
                 --graph_type=undirected \
-                --min_neighborhood_size=5 \
-                --max_neighborhood_size=100 \
-                --n_neighborhoods=50 \
+                --min_neighborhood_size=10 \
+                --max_neighborhood_size=150 \
+                --n_neighborhoods=800 \
                 --radius=2 \
-                --out_path=/app/results/patterns.pkl
+                --min_pattern_size=3 \
+                --max_pattern_size=8 \
+                --search_strategy=greedy \
+                --out_batch_size=15 \
+                --out_path=/app/results/patterns_facebook.pkl
               echo 'Checking output directories...'
               ls -la /app/plots/cluster
               ls -la /app/results
