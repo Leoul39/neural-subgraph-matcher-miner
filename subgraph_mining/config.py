@@ -67,6 +67,10 @@ def parse_decoder(parser):
 
     # Set default values
     parser.set_defaults(
+        # Youtube Ungraph dataset Properties:
+        # Number of nodes: 1,134,890
+        # Number of edges: 2,987,624
+        # The parameters are updated accordingly
         # Dataset & Memory 
         graph_type="undirected",       
         chunk_size=5000,               
