@@ -67,28 +67,48 @@ def parse_decoder(parser):
 
     # Set default values
     parser.set_defaults(
-        # Dataset defaults
-        dataset="enzymes",
-        batch_size=1000,
-        
-        # Decoder defaults
-        out_path="results/patterns.p",
-        n_neighborhoods=100,
-        n_trials=100,
-        decode_thresh=0.5,
-        radius=3,
-        subgraph_sample_size=0,
-        sample_method="tree",
-        skip="learnable",
-        graph_type="directed",
-        min_pattern_size=3,
-        max_pattern_size=5,
-        min_neighborhood_size=2,
-        max_neighborhood_size=3,
-        search_strategy="greedy",
-        out_batch_size=3,
-        node_anchored=True,
-        memory_limit=1000000,
-        streaming_workers=4,
-        auto_streaming_threshold=50000
+        # Dataset & Memory 
+        graph_type="undirected",       
+        chunk_size=5000,               
+        memory_efficient=True,         
+        auto_streaming_threshold=20000,
+        streaming_workers=8,
+        # Sampling Strategy
+        n_neighborhoods=5000,          
+        radius=3,                      
+        sample_method="radial",        
+        subgraph_sample_size=50,
+        # Pattern Searching
+        min_pattern_size=3,            
+        max_pattern_size=10,           
+        search_strategy="mcts",        
+        beam_width=8,                 
+        n_trials=500,
+        # Output
+        out_batch_size=10,           
+        out_path="results/patterns_youtube.p"
     )
+    # Dataset defaults
+    #     dataset="enzymes",
+    #     batch_size=1000,
+    #     # Decoder defaults
+    #     out_path="results/patterns_youtube.p",
+    #     n_neighborhoods=100,
+    #     n_trials=100,
+    #     decode_thresh=0.5,
+    #     radius=3,
+    #     subgraph_sample_size=0,
+    #     sample_method="tree",
+    #     skip="learnable",
+    #     graph_type="directed",
+    #     min_pattern_size=3,
+    #     max_pattern_size=5,
+    #     min_neighborhood_size=2,
+    #     max_neighborhood_size=3,
+    #     search_strategy="greedy",
+    #     out_batch_size=3,
+    #     node_anchored=True,
+    #     memory_limit=1000000,
+    #     streaming_workers=4,
+    #     auto_streaming_threshold=50000
+    # )
